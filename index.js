@@ -4,11 +4,9 @@ const fetch = require('node-fetch');
 
 const {WEBHOOK_URL: webhookUrl} = process.env;
 
-console.log(webhookUrl);
-
 module.exports = async (req, res) => {
 	const {subject, body} = await json(req);
-	const text = subject.replace(/^\[The Broken Crown\] /, '');
+	const text = subject.replace(/^\[The Broken Crown\] - /, '');
 	const [url = 'http://thebrokencrown.obsidianportal.com'] = getUrls(body);
 
 	const r = await fetch(webhookUrl, {

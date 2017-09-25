@@ -6,7 +6,7 @@
   "scripts": {
     "now-start": "micro",
     "start": "node -r dotenv/config node_modules/.bin/micro-dev",
-    "deploy": "now --dotenv"
+    "deploy": "now --dotenv --public"
   },
   "repository": {
     "type": "git",
